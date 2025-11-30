@@ -1,4 +1,4 @@
-## 6. Baseline Interaction Contract
+## Baseline Interaction Contract
 
 Voice-mode stability requires a clear conversational contract at the beginning of the dialogue.
 
