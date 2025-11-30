@@ -1,90 +1,61 @@
-Voice Interaction Failure Modes in LLMs
+# Voice Interaction Failure Modes in LLMs
 
-This repository provides a focused, interaction-level analysis of how large language models fail, drift, and misalign during spoken, real-time dialogue.
-The work maps the unique breakdown patterns that appear only in voice mode, not text mode, highlighting the structural mismatch between human conversational timing and model-generated speech.
+This repository provides a focused analysis of how large language models misalign, drift, and fail during spoken, real-time dialogue. The work maps failure patterns unique to voice mode and highlights timing, rhythm, and structural mismatches between human speech and model-generated responses.
 
-All findings are derived from direct, longitudinal experimentation with Turkish-language voice interactions.
-Behavior may differ across languages; the phenomena documented here are specific to the Turkish inference pathway.
+## Core Scope
 
-Core Scope
+### Turn-taking breakdowns  
+Timing desynchronization, overlap errors, dominance drift, response-window collapse.
 
-This repository concentrates on:
+### Stop-signal insensitivity  
+Failure to stop speaking on cue, delayed termination, override resistance.
 
-• Turn-taking breakdowns
+### Friction dynamics  
+User-agency degradation, grounding instability, cognitive-load escalation.
 
-Timing desynchronization, overlap failures, early/late response onset, and conversational dominance shifts.
+### Expansion drift  
+Unsolicited elaboration, scope growth, runaway suggestion loops.
 
-• Stop-signal insensitivity
+### Interaction-core failures  
+Memory segmentation issues, boundary collapse, multi-turn degradation under spoken load.
 
-Failure to terminate speech on cue, delayed stopping, override resistance, and instruction–termination conflict patterns.
+## Why Voice Behaves Differently
 
-• Friction dynamics
+Voice introduces constraints LLMs are not architecturally optimized for:
 
-User-agency degradation, rhythm disruption, cognitive load escalation, and grounding instability.
+- real-time rhythm coupling  
+- strict turn-taking boundaries  
+- stop-signal compliance  
+- microsecond timing expectations  
+- pacing symmetry between human and model  
 
-• Expansion drift
+Violating these constraints triggers predictable drift sequences.
 
-Unsolicited elaboration, scope growth, runaway suggestions, and modality-triggered semantic drift.
+## Repository Structure
 
-• Interaction-core failures
+### voice-index.md  
+Master index for all voice-related failure types.
 
-Memory segmentation issues, boundary collapse, and degradation of multi-turn stability under spoken load.
+### voice-interaction-core.md  
+Structural breakdown of voice-mode memory and boundary behavior.
 
-These failure modes emerge only during continuous spoken dialogue, not typed interaction.
+### voice-turn-taking-failure.md  
+Desync, early/late onset, overlap, dominance drift.
 
-Why Voice Is Different
+### voice-stop-signal-failure.md  
+Stop-signal blindness, forced continuation, termination failures.
 
-Voice introduces constraints that LLMs are not architecturally designed for:
+### voice-friction-analysis.md  
+Grounding failures, rhythm instability, user friction dynamics.
 
-real-time rhythm coupling
+### voice-expansion-drift.md  
+Expansion loops, unsolicited scope growth, semantic drift.
 
-microsecond-scale timing expectations
+## Purpose
 
-strict turn-taking boundaries
+This work aims to:
 
-immediate stop-signal compliance
-
-user–agent symmetry in speech pacing
-
-When these constraints are not met, the model enters predictable drift sequences that propagate across turns.
-
-This repository documents those sequences in detail.
-
-File Breakdown
-voice-index.md
-
-Master index for all voice-related failure modes.
-
-voice-interaction-core.md
-
-Structural breakdown of voice-mode behavior: memory, boundaries, drift propagation.
-
-voice-turn-taking-failure.md
-
-Timing desync, overlap errors, dominance drift, response-window collapse.
-
-voice-stop-signal-failure.md
-
-Stop-signal blindness, late termination, forced continuation patterns.
-
-voice-friction-analysis.md
-
-User-friction dynamics, grounding failures, escalating interaction cost.
-
-voice-expansion-drift.md
-
-Expansion loops, unsolicited scope growth, runaway suggestions, modality-triggered semantic drift.
-
-Purpose
-
-The objective of this work is to provide:
-
-a clear taxonomy of voice-interaction failure modes
-
-a technical mapping of drift sequences unique to spoken dialogue
-
-insight into why voice alignment is significantly harder than text alignment
-
-a foundation for improving real-time conversational AI systems
-
-This repository is intended for alignment researchers, model architects, and engineers investigating voice-mode reliability.
+- document voice-specific failure modes  
+- map drift sequences unique to spoken dialogue  
+- clarify why voice alignment is harder than text alignment  
+- support research on real-time conversational AI stability  
